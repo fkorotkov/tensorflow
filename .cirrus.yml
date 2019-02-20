@@ -4,6 +4,9 @@ container:
   memory: 24G
 
 test_task:
+  env:
+    CIRRUS_CLONE_DEPTH: 50
+    CIRRUS_WORKING_DIR: /workspace
   test_script: |
     bazel test \
       --spawn_strategy=sandboxed \
