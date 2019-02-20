@@ -6,6 +6,7 @@ test_task:
   env:
     CIRRUS_CLONE_DEPTH: 50
     CIRRUS_WORKING_DIR: /workspace
+    DOCKER_CONTEXT: tensorflow/tensorflow/tools/ci_build/
   info_script: bazel version
   test_script: |
     bazel test \
