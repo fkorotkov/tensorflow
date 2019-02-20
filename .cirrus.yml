@@ -1,0 +1,7 @@
+container:
+  image: tensorflow/tensorflow:nightly-devel
+  cpu: 8
+  memory: 24G
+  
+test_task:
+  test_script: bazel test //tensorflow/...
