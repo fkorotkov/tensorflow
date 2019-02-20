@@ -1,0 +1,18 @@
+test_task:
+  container:
+    dockerfile: tensorflow/tools/ci_build/Dockerfile.cpu
+    cpu: 8
+    memory: 24G
+  
+  env:
+    CIRRUS_CLONE_DEPTH: 50
+    CIRRUS_WORKING_DIR: /workspace
+    DOCKER_CONTEXT: tensorflow/tools/ci_build/
+  
+  test_script: |
+    bazel test \
+      --spawn_strategy=sandboxed \
+      --strategy=Javac=sandboxed \
+      --genrule_strategy=sandboxed \
+      --remote_http_cache=http://$CIRRUS_HTTP_CACHE_HOST \
+      //tensorflow/...
