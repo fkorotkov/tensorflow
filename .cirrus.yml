@@ -1,0 +1,13 @@
+container:
+  image: tensorflow/tensorflow:nightly-devel
+  cpu: 8
+  memory: 24G
+
+test_task:
+  test_script: |
+    bazel test \
+      --spawn_strategy=sandboxed \
+      --strategy=Javac=sandboxed \
+      --genrule_strategy=sandboxed \
+      --remote_http_cache=http://$CIRRUS_HTTP_CACHE_HOST \
+      //tenserflow/...
