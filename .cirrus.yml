@@ -1,6 +1,6 @@
 test_task:
   container:
-    dockerfile: tensorflow/tools/docker/Dockerfile.cpu
+    dockerfile: tensorflow/tools/ci_build/Dockerfile.cpu
     cpu: 8
     memory: 24G
   env:
