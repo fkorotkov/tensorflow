@@ -26,5 +26,5 @@ task:
   test_script: bazel test //tensorflow/...
   
 task:
-  name Test (Ubuntu)
+  name: Test (Ubuntu)
   test_script: bazel test tensorflow/github/ubuntu/cc/continuous
