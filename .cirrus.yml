@@ -1,3 +1,5 @@
+timeout_in: 2h
+
 test_task:
   container:
     dockerfile: tensorflow/tools/ci_build/Dockerfile.cpu
